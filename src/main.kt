@@ -11,6 +11,7 @@ fun main() {
     println("Enter the student's mark:")
     var mark = readln().toDouble()
 
-    var newStudent = Student(id, name, course, mark)
+    var newStudent = Student(id, name, course)
+    newStudent.mark = mark
     println(newStudent)
 }

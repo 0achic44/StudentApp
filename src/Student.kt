@@ -1,4 +1,4 @@
-class Student (val nId: String, val nName: String, val nCourse: String, nMark: Double) {
+class Student (val nId: String, val nName: String, val nCourse: String) {
     val id: String
     val name: String
     val course: String
@@ -13,7 +13,6 @@ class Student (val nId: String, val nName: String, val nCourse: String, nMark: D
         id = nId
         name = nName
         course = nCourse
-        mark = nMark
     }
 
     fun getGrade(): String {
@@ -26,8 +25,18 @@ class Student (val nId: String, val nName: String, val nCourse: String, nMark: D
         }
     }
 
+    fun didPass(): Boolean {
+        if (mark >= 40) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
     override fun toString(): String {
         val grade = getGrade()
-        return "Id: $nId, Name: $nName, Course: $nCourse, Mark: $mark, Grade: $grade"
+        val pass = didPass()
+        return "Id: $nId, Name: $nName, Course: $nCourse, Mark: $mark, Grade: $grade, Pass: $pass"
     }
 }
