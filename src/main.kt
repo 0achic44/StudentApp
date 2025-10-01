@@ -1,4 +1,7 @@
 fun main() {
+    println("Is this student an Undergraduate student or a Masters student")
+    var type = readln().lowercase()
+
     println("Enter the student's ID:")
     var id = readln()
 
@@ -11,7 +14,16 @@ fun main() {
     println("Enter the student's mark:")
     var mark = readln().toDouble()
 
-    var newStudent = Student(id, name, course)
-    newStudent.mark = mark
-    println(newStudent)
+    val student : Student
+
+    if (type == "undergraduate") {
+        student = Undergraduate(id, name, course)
+        student.mark = mark
+        println(student)
+    }
+    else if (type == "masters") {
+        student = Masters(id, name, course)
+        student.mark = mark
+        println(student)
+    }
 }
